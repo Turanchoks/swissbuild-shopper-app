@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "maestro-app",
+    "slug": "maestro-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.remneys.swissbuildtest",
+      "buildNumber": "100"
+    },
+    "android": {
+      "package": "com.remneys.swissbuildtest",
+      "adaptiveIcon": {
+        "backgroundColor": "#1a1a2e",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "versionCode": 5000
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "experiments": {
+      "tsconfigPaths": false
+    },
+    "plugins": [
+      "./plugins/withUploadSigning.js"
+    ]
+  }
+}
