@@ -23,6 +23,9 @@ export default {
       mode: "asc-api",
       teamId: "LQPQQX6JP6",
       bundleId: "com.remneys.swissbuildtest",
+      // Expo's generated project signs Release with "iPhone Developer"; without
+      // this xcodebuild asks for a development certificate the profile lacks.
+      codeSignIdentity: "Apple Distribution",
       certificateType: "DISTRIBUTION",
       profileType: "IOS_APP_STORE",
     },
