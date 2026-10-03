@@ -20,14 +20,12 @@ export default {
     scheme: "maestroapp",
     configuration: "Release",
     signing: {
-      mode: "asc-api",
+      // swiss-knife provisions the certificate and profile with the stored
+      // App Store Connect key (asc-api mode only fetches an existing pair,
+      // whose private key a fresh build machine does not hold).
+      mode: "managed",
       teamId: "LQPQQX6JP6",
       bundleId: "com.remneys.swissbuildtest",
-      // Expo's generated project signs Release with "iPhone Developer"; without
-      // this xcodebuild asks for a development certificate the profile lacks.
-      codeSignIdentity: "Apple Distribution",
-      certificateType: "DISTRIBUTION",
-      profileType: "IOS_APP_STORE",
     },
   },
   android: {
