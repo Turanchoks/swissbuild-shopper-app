@@ -1,0 +1,15 @@
+#!/bin/bash
+# Swiss Build pre-build hook for the canary's shopper app.
+#
+# ios/ and android/ are generated (Expo continuous native generation, both are
+# gitignored), so a fresh clone has no ios/maestroapp.xcworkspace for
+# xcodebuild. Install JS dependencies, then generate the native project for
+# the platform being built.
+set -euo pipefail
+export CI=1
+
+if [ ! -d node_modules ]; then
+  npm ci --legacy-peer-deps
+fi
+
+npx expo prebuild --platform "${SWISSBUILD_PLATFORM:-ios}"
