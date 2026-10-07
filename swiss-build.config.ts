@@ -26,6 +26,12 @@ export default {
       mode: "managed",
       teamId: "LQPQQX6JP6",
       bundleId: "com.remneys.swissbuildtest",
+      // Expo's generated project signs Release with "iPhone Developer", and
+      // managed mode does not default the identity: without this xcodebuild asks
+      // for a development certificate the App Store profile lacks ("No signing
+      // certificate "iOS Development" found"). Dropped by mistake when the
+      // config moved from asc-api to managed (ef4a085).
+      codeSignIdentity: "Apple Distribution",
     },
   },
   android: {
